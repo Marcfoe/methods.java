@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class RectangleAreaCalculator {
+
+    public static void main(String[] args) {
+        int[] dimensions = getUserInput();
+        int area = computeArea(dimensions[0], dimensions[1]); // Pass user input dimensions to computeArea method
+        System.out.println("The area of the rectangle is: " + area);
+    }
+
+    public static int[] getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the length of the rectangle: ");
+        int length = scanner.nextInt();
+
+        System.out.print("Enter the width of the rectangle: ");
+        int width = scanner.nextInt();
+
+        scanner.close();
+
+        return new int[]{length, width};
+    }
+
+    public static int computeArea(int length, int width) { // Modified computeArea method to accept parameters
+        return length * width;
+    }
+}
